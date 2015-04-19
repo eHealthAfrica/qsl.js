@@ -2,7 +2,7 @@ function parsePython(rawPythonFileContents) {
     var rawLines = rawPythonFileContents.split('\n'),
         cleanedLines = [],
         pythonOutput = [],
-        indentionLength = 0,
+        indentationLength = 0,
         error = false,
         i = 0;
 
@@ -14,34 +14,34 @@ function parsePython(rawPythonFileContents) {
         }
     });
 
-    // Find indention length
-    while (indentionLength === 0 && i < cleanedLines.length) {
+    // Find indentation length
+    while (indentationLength === 0 && i < cleanedLines.length) {
         if (cleanedLines[i].length - cleanedLines[i].trimLeft().length > 0) {
-            indentionLength = cleanedLines[i].length - cleanedLines[i].trimLeft().length;
+            indentationLength = cleanedLines[i].length - cleanedLines[i].trimLeft().length;
         }
         i++;
     }
 
-    // Don't allow indentions of zero
-    if (indentionLength === 0) {
-        indentionLength = 1;
+    // Don't allow indentations of zero
+    if (indentationLength === 0) {
+        indentationLength = 1;
     }
 
     // Turn Python into a construct of Arrays and Objects
     cleanedLines.forEach(function(cleanedLine) {
-        var indentions = (cleanedLine.length - cleanedLine.trimLeft().length) / indentionLength,
+        var indentations = (cleanedLine.length - cleanedLine.trimLeft().length) / indentationLength,
             currentArray = pythonOutput,
             j;
 
 
-        if (indentions % 1 != 0) {
-            // Indention characters do not correspond to a known indention level.
+        if (indentations % 1 != 0) {
+            // indentation characters do not correspond to a known indentation level.
             error = true;
         }
 
-        for (j = 0; j < indentions; j++) {
+        for (j = 0; j < indentations; j++) {
             if (currentArray.length === 0) {
-                // The indentions tell us to go a place that it's not possible to go.
+                // The indentations tell us to go a place that it's not possible to go.
                 error = true;
             } else {
                 currentArray = currentArray[currentArray.length - 1]['children'];
@@ -59,4 +59,3 @@ function parsePython(rawPythonFileContents) {
 
     return pythonOutput;
 }
-
