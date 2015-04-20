@@ -1,4 +1,4 @@
-function parsePython(rawPythonFileContents) {
+function parsePythonIndentation(rawPythonFileContents) {
     var rawLines = rawPythonFileContents.split('\n'),
         cleanedLines = [],
         pythonOutput = [],
