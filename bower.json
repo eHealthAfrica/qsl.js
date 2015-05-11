@@ -16,7 +16,9 @@
     "**/*",
     "**/.*",
     "!README.md",
-    "!LICENSE"
+    "!LICENSE",
+    "!qsl.js",
+    "!qsl.min.js"
   ],
   "homepage": "https://github.com/eHealthAfrica/qsl.js"
 }
