@@ -9,7 +9,7 @@
     "postbuild": "uglifyjs dist/qsl.js -mc > dist/qsl.min.js",
     "test": "mocha",
     "watch": "mocha --watch",
-    "prepublish": "semantic-release pre",
+    "prepublish": "npm run build && semantic-release pre",
     "postpublish": "semantic-release post"
   },
   "repository": {
