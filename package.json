@@ -1,6 +1,6 @@
 {
   "name": "qsl",
-  "version": "0.0.0-semantically-released",
+  "version": "1.0.2",
   "description": "QSL parser",
   "main": "index.js",
   "scripts": {
@@ -8,9 +8,7 @@
     "build": "browserify index.js -s qsl -o dist/qsl.js",
     "postbuild": "uglifyjs dist/qsl.js -mc > dist/qsl.min.js",
     "test": "mocha",
-    "watch": "mocha --watch",
-    "prepublish": "semantic-release pre",
-    "postpublish": "semantic-release post"
+    "watch": "mocha --watch"
   },
   "repository": {
     "type": "git",
