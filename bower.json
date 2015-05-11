@@ -1,19 +1,22 @@
 {
-  "name": "parse-python-indentation",
-  "version": "0.1.0",
+  "name": "qsl",
   "authors": [
-    "Johannes Wilm http://www.johanneswilm.org"
+    "Johannes Wilm <http://www.johanneswilm.org>",
+    "Tom Vincent <https://tlvince.com>"
   ],
-  "description": "a javascript library to parse text files that are indented python style",
-  "main": "parsePythonIndentation.js",
+  "description": "QSL parser",
+  "main": "qsl.js",
   "keywords": [
-    "javascript",
-    "python",
-    "parsing"
+    "qsl",
+    "parser",
+    "questionnaire"
   ],
   "license": "Apache 2.0",
   "ignore": [
+    "**/*",
     "**/.*",
-    "bower.json"
-  ]
+    "!README.md",
+    "!LICENSE"
+  ],
+  "homepage": "https://github.com/eHealthAfrica/qsl.js"
 }

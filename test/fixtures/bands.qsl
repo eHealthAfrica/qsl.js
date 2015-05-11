@@ -1,0 +1,9 @@
+Favourite bands survey
+defaults
+  required
+section execution order
+  bands
+bands:
+  First gig?
+  How many gigs?
+    integer

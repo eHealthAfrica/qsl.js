@@ -1,0 +1,25 @@
+sudo: false
+language: node_js
+node_js:
+  - '0.10'
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
+before_install:
+  - npm config set spin false --global
+after_script:
+  - ./scripts/bower-deploy.sh
+deploy:
+  provider: npm
+  email: oss@ehealthafrica.org
+  skip_cleanup: true
+  on:
+    branch: master
+    repo: eHealthAfrica/qsl.js
+  api_key:
+    secure: jH7/dWbQNtdO0M7wvyzpCCEQe0IUEo4YwIf/34kvdRAHNUDjmxcGFNfU0UlIk5PXWAvLsDld3XSk+SJKHzkofaH7itTRYkNJw+MkyCm9v7IaqeBB0Qw4TQ1BDkSnf5q6UjV8tHXWZLnGb09ad10D0FxhbXmExPvuq39StORLIKDKr5nbqxm9xq3P5AaCOcliHtvNxVS2f+2WYkbEVhIvXiYg3qKasMKeVBGshjsafO3vTFnnAYilTLEO3JIVJrkrHhnjGGx+EOVBroxHEB+l51exLcmnXE8WTXJQyKLPV3jwllEMr/p4O8GIoULIDiZ/v06ziAbQq4/L6uDzqW/OqcKiNSdqzyDtUsK5CDBSpv+aBNWpPeKtzPRIufgu52AjOZYdEoxGTZaOtwMwLcxZ8mvEf+YS84oAwUjaxmUmlTxfLTkHV9QQ2zOw56x1DVLRDedbwTEDGz/U4PNGLZb3xFV59EvxMKVTvBy5nZ+IvsP7r2itZ9jwQA5cYjEDxqPdnPOn/n+ankfxlqUeKdOYtNl9rxbB+m8ks9EbrdlVJJGWwdSr13G3tJoZZceV4oBa6glCEhehyrBtHB0Ae1ofJkuwsQiZtw2AQPyp5To7bILpXLz4nBgUH5C8R3uFnr+8pX3fvZGSfhQJTK+WZBpwt1RpaRwJsMDNSjc1GlNo3H4=
+env:
+  global:
+    secure: Zskjw41/uN7s71vGL+PV9JcEl2JHvTmf76Clm1ow2klkk7vSq81jFDXAcVhdE0Qg8OqprjkK8AZFMdF4oLuhK/Mnsy/Xjifs9skBmW9F05DwyujdFAIZ0dG55Yv6vALSxlVLc5hI0hqKMYfdpOWIWT9Q0l9Mw9W9fkockxGaQGw7bPQgzon8/FNkBD2C0vpRPe77UX0FUDf1hYSia5bv3TmXy9Q619QKun/Iq3pZq4w6SqBLES2L8JvJqogzc3IZFj+sLUnIUcsTq502s5p7oRnV97L1jD8oQx54tuTsy5+fG7qG6Ype7Pz1he7hTiBXuuyCE3BRfxteLoHlpASoHGcKMF50QzNqRgeO6Xz4vmH2W/Gf33DI78mQ9M0h9vOkFoTt2EZDdyM7YBiMxrr5bdfdHQFTxDvfoWFYaIEY2HOnXB9zZhjmJ4xKXAQoPLvqaZTsQkQ2X9uB/fhzAGLDRQei1KUF5yKIRzL26Y9cokP3jJiYV8hEKhdm/93WWiC8/8KhUt8YWSxiHEi0W1bWnm+AdSqW5gznHgq+Ik1DYguSiG61qbBd+FpBBRpf7oKGp/11zmlvH4w7kLmuLBAoj71D4zkWK29p7Bl+8RrSP8K/WBTlMtWbuweWdvJeGkLYqTV8kM3llrtor7QZ1M+qYKzkYXRyYel4v+si1Dqkq5w=
