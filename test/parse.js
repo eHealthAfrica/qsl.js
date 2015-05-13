@@ -1,9 +1,9 @@
 'use strict';
 
 var fs = require('fs');
-var qsl = require('..');
+var qsl = require('../lib/parse');
 
-describe('qsl', function() {
+describe('parse', function() {
   describe('fixtures', function() {
     var bands;
     before(function(done) {
