@@ -30,7 +30,8 @@ describe('qsl', function() {
         required: true
       }
     ];
-    var actual = qsl.parse(bands, 'bands');
+    var parsed = qsl.parse(bands);
+    var actual = qsl.format(parsed, 'bands');
     actual.should.eql(expected);
   });
 });
